@@ -15,6 +15,7 @@
 		628EC8DB22B8FF1D00FFCC8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 628EC8D922B8FF1D00FFCC8A /* LaunchScreen.storyboard */; };
 		628EC8E622B8FF1D00FFCC8A /* CompositionalLayoutExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8E522B8FF1D00FFCC8A /* CompositionalLayoutExampleTests.swift */; };
 		628EC8F122B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8F022B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.swift */; };
+		62DDFA1B22B96747004F3D8B /* ListGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDFA1A22B96747004F3D8B /* ListGridViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		628EC8EC22B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompositionalLayoutExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		628EC8F022B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutExampleUITests.swift; sourceTree = "<group>"; };
 		628EC8F222B8FF1D00FFCC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62DDFA1A22B96747004F3D8B /* ListGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGridViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				628EC8D722B8FF1D00FFCC8A /* Assets.xcassets */,
 				628EC8D922B8FF1D00FFCC8A /* LaunchScreen.storyboard */,
 				628EC8DC22B8FF1D00FFCC8A /* Info.plist */,
+				62DDFA1A22B96747004F3D8B /* ListGridViewController.swift */,
 			);
 			path = CompositionalLayoutExample;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DDFA1B22B96747004F3D8B /* ListGridViewController.swift in Sources */,
 				628EC8D322B8FF1B00FFCC8A /* ViewController.swift in Sources */,
 				628EC8CF22B8FF1B00FFCC8A /* AppDelegate.swift in Sources */,
 				628EC8D122B8FF1B00FFCC8A /* SceneDelegate.swift in Sources */,

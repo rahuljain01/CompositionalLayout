@@ -18,6 +18,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlO-dh-bvp">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="TbC-lG-t8N"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -41,7 +44,8 @@
                 </constraints>
             </collectionViewCellContentView>
             <connections>
-                <outlet property="titleLabel" destination="dlO-dh-bvp" id="DdA-FB-0AB"/>
+                <outlet property="cellHeight" destination="TbC-lG-t8N" id="hMK-tg-v0i"/>
+                <outlet property="titleLabelNumber" destination="dlO-dh-bvp" id="agn-0M-KqL"/>
             </connections>
             <point key="canvasLocation" x="134.78260869565219" y="144.64285714285714"/>
         </collectionViewCell>

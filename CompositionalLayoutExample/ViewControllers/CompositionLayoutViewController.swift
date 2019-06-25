@@ -37,7 +37,7 @@ class CompositionLayoutViewController: UIViewController {
             let sectionType = Section(rawValue: sectionIndex)
             switch sectionType {
                 case .linear:
-                    return self.getLinerSection()
+                    return self.getLinearSection()
                 case .grid:
                     return self.getGridSection()
                 default:
@@ -46,8 +46,16 @@ class CompositionLayoutViewController: UIViewController {
             }
         return layout
     }
+    
+    //   +-------------------------------------+
+    //   | +---------------------------------+ |
+    //   | |                                 | |
+    //   | |                0                | |
+    //   | |                                 | |
+    //   | +---------------------------------+ |
+    //   +-------------------------------------+
 
-    func getLinerSection() -> NSCollectionLayoutSection {
+    func getLinearSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -57,6 +65,14 @@ class CompositionLayoutViewController: UIViewController {
                                                        subitems: [item])
         return NSCollectionLayoutSection(group: group)
     }
+    
+    //   +---------------------------------------------------+
+    //   | +-------+ +-------+ +-------+ +-------+ +-------+ |
+    //   | |       | |       | |       | |       | |       | |
+    //   | |   0   | |   1   | |   2   | |   3   | |   4   | |
+    //   | |       | |       | |       | |       | |       | |
+    //   | +-------+ +-------+ +-------+ +-------+ +-------+ |
+    //   +---------------------------------------------------+
     
     func getGridSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
@@ -70,6 +86,25 @@ class CompositionLayoutViewController: UIViewController {
         return NSCollectionLayoutSection(group: group)
     }
     
+    //   +------------------------------------------------------+
+    //   |                                    +---------------+ |
+    //   | +---------------------------------+| +-----------+ | |
+    //   | |                                 || |           | | |
+    //   | |                                 || |           | | |
+    //   | |                                 || |     1     | | |
+    //   | |                                 || |           | | |
+    //   | |                                 || |           | | |
+    //   | |                                 || +-----------+ | |
+    //   | |               0                 ||               | |
+    //   | |                                 || +-----------+ | |
+    //   | |                                 || |           | | |
+    //   | |                                 || |           | | |
+    //   | |                                 || |     2     | | |
+    //   | |                                 || |           | | |
+    //   | +---------------------------------+| +-----------+ | |
+    //   |                                    +---------------+ |
+    //   +------------------------------------------------------+
+    
     func getOrthogonalSection() -> NSCollectionLayoutSection {
         let leadingItem = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.7),
@@ -78,7 +113,7 @@ class CompositionLayoutViewController: UIViewController {
         
         let trailingItem = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalHeight(0.3)))
+                                               heightDimension: .fractionalHeight(0.2)))
         trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         let trailingGroup = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
@@ -95,13 +130,43 @@ class CompositionLayoutViewController: UIViewController {
         return section
     }
     
+    func getOrthogonalSectionWithPaging() -> NSCollectionLayoutSection {
+        let leadingItem = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalHeight(0.8)))
+        leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        
+        let trailingItem = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalHeight(1.0)))
+        trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        let leadingGroup = NSCollectionLayoutGroup.horizontal(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalHeight(0.8)),
+            subitems: [leadingItem])
+        
+        let trailingGroup = NSCollectionLayoutGroup.horizontal(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
+                                               heightDimension: .fractionalHeight(0.2)),
+            subitem: trailingItem, count: 4)
+        
+        let containerGroup = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.85),
+                                               heightDimension: .fractionalHeight(1.0)),
+            subitems: [leadingGroup, trailingGroup])
+        let section = NSCollectionLayoutSection(group: containerGroup)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        return section
+    }
+    
     private func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Int>(collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, identifier: Int) -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: "ListCell",
                 for: indexPath) as? ListCell else { fatalError("Cannot create new cell") }
-            cell.titleLabel.text = "\(indexPath.item)"
+            cell.titleLabelNumber.text = "\(indexPath.item)"
             return cell
         }
         

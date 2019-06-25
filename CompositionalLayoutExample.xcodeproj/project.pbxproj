@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		156875C822B94DED00AF95C7 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156875C722B94DED00AF95C7 /* ListCell.swift */; };
 		156875CA22B94DFF00AF95C7 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156875C922B94DFF00AF95C7 /* ListCell.xib */; };
-		156875CD22BA030A00AF95C7 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156875CC22BA030A00AF95C7 /* LandingViewController.swift */; };
 		628EC8CF22B8FF1B00FFCC8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8CE22B8FF1B00FFCC8A /* AppDelegate.swift */; };
 		628EC8D122B8FF1B00FFCC8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8D022B8FF1B00FFCC8A /* SceneDelegate.swift */; };
 		628EC8D322B8FF1B00FFCC8A /* CompositionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8D222B8FF1B00FFCC8A /* CompositionLayoutViewController.swift */; };
@@ -19,6 +18,7 @@
 		628EC8E622B8FF1D00FFCC8A /* CompositionalLayoutExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8E522B8FF1D00FFCC8A /* CompositionalLayoutExampleTests.swift */; };
 		628EC8F122B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EC8F022B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.swift */; };
 		62DDFA1B22B96747004F3D8B /* ListGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDFA1A22B96747004F3D8B /* ListGridViewController.swift */; };
+		62DDFA2122BB5E78004F3D8B /* PinterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDFA2022BB5E78004F3D8B /* PinterestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* Begin PBXFileReference section */
 		156875C722B94DED00AF95C7 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		156875C922B94DFF00AF95C7 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
-		156875CC22BA030A00AF95C7 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		628EC8CB22B8FF1B00FFCC8A /* CompositionalLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		628EC8CE22B8FF1B00FFCC8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		628EC8D022B8FF1B00FFCC8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		628EC8F022B8FF1D00FFCC8A /* CompositionalLayoutExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutExampleUITests.swift; sourceTree = "<group>"; };
 		628EC8F222B8FF1D00FFCC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62DDFA1A22B96747004F3D8B /* ListGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGridViewController.swift; sourceTree = "<group>"; };
+		62DDFA2022BB5E78004F3D8B /* PinterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				628EC8D222B8FF1B00FFCC8A /* CompositionLayoutViewController.swift */,
-				156875CC22BA030A00AF95C7 /* LandingViewController.swift */,
+				62DDFA2022BB5E78004F3D8B /* PinterestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,12 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DDFA2122BB5E78004F3D8B /* PinterestViewController.swift in Sources */,
 				62DDFA1B22B96747004F3D8B /* ListGridViewController.swift in Sources */,
-				628EC8D322B8FF1B00FFCC8A /* ViewController.swift in Sources */,
+				628EC8D322B8FF1B00FFCC8A /* CompositionLayoutViewController.swift in Sources */,
 				628EC8D322B8FF1B00FFCC8A /* CompositionLayoutViewController.swift in Sources */,
 				156875C822B94DED00AF95C7 /* ListCell.swift in Sources */,
 				628EC8CF22B8FF1B00FFCC8A /* AppDelegate.swift in Sources */,
-				156875CD22BA030A00AF95C7 /* LandingViewController.swift in Sources */,
 				628EC8D122B8FF1B00FFCC8A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
